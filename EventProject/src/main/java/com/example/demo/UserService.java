@@ -1,0 +1,1 @@
+package com.example.demo;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.stereotype.Service;@Servicepublic class UserService {    @Autowired    private static UserRepository userRepository;    public static User getUserById(Long userId) {        return userRepository.findById(userId).orElse(null);    }}

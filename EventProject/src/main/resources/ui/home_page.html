@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <title>Головна сторінка</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js">
+    </script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css"/>
+    <style>
+
+        .links li {
+            margin: 15px 0;
+            list-style-type: none;
+        }
+
+        .links a {
+            color: black;
+            text-decoration: none;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 14px
+        }
+
+        .links a:hover {
+            border-left: 3px solid #99c3ff;
+            padding-left: 10px;
+        }
+
+        .lower_links li {
+            margin: 15px 0;
+            list-style-type: none;
+        }
+
+        .lower_links a {
+            color: black;
+            text-decoration: none;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .lower_links a:hover {
+            border-left: 3px solid #99c3ff;
+            padding-left: 10px;
+        }
+
+        .photo_menu li {
+            display: flex;
+        }
+
+        .header_main {
+            width: 100%;
+            padding-top: 10px;
+            position: absolute;
+            top: 0;
+            left: 35px;
+            margin-bottom: 20px;
+        }
+
+        .header_liner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .nav_link {
+            display: inline-block;
+            vertical-align: top;
+        / / margin: 0 15 px;
+            padding-left: 15px;
+            padding-top: 1px;
+            text-decoration: none;
+            color: black;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 16px;
+            transition: color 0.1s linear;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav_link:hover {
+            color: #99c3ff;
+        }
+
+        .nav_link:hover:after {
+            display: block;
+        }
+
+        .nav_link.active {
+            color: #99c3ff;
+        }
+
+
+        .entrance {
+            text-decoration: none;
+            color: black;
+            padding-top: 5px;
+            margin-right: 60px;
+            z-index: 1;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 16px;
+
+        }
+
+        .nav_entrance {
+            top: 0;
+            right: 0;
+            float: right;
+        }
+
+        .entrance:hover {
+            color: #99c3ff;
+        }
+
+        .entrance:hover:after {
+            display: block;
+        }
+
+        #about_s_d_c {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 30px;
+            margin-top: 20px;
+        }
+
+
+        .s_d_c_items {
+            padding-top: 50px;
+        }
+
+        form {
+            width: 600px;
+            padding-left: 70px;
+        }
+
+        input {
+            padding: 4px 10px;
+            border: 0;
+            font-size: 16px;
+        }
+
+        .search {
+            width: 75%;
+            border: 3px solid #99c3ff;
+            border-radius: 50px;
+
+        }
+
+        .submit {
+            width: 70px;
+            background-color: #99c3ff;
+            color: #ffffff;
+            border-radius: 50px;
+        }
+
+        #date_id {
+            width: 200px;
+            height: 40px;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 14px;
+            border-radius: 20px;
+            text-align: center;
+            border: 3px solid #99c3ff;
+            padding: 5px 30px;
+            margin-right: 20px;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #events_Block {
+            margin-top: 40px;
+            margin-left: 60px;
+            border: 3px solid #99c3ff;
+            height: 400px;
+            width: 230px;
+            border-radius: 20px;
+        }
+
+        #events_Block h4 {
+            top: 0;
+            text-align: center;
+        }
+
+        .img_date_EB {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 14px;
+        / / align-items: center;
+            padding-left: 10px;
+        }
+
+        .img_date_EB img, .img_price_EB img, .img_time_EB img {
+            width: 25px;
+            text-align: right;
+            float: right;
+            margin-right: 1px;
+        }
+
+        .img_address_EB img {
+            width: 20px;
+            text-align: right;
+            float: right;
+            margin-right: 4px;
+        }
+
+        .img_time_EB {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 14px;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        .img_address_EB {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 14px;
+            align-items: center;
+            padding-left: 12px;
+        }
+
+        .img_price_EB {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 14px;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        .cl_time {
+            align-items: center;
+            text-align: center;
+
+        }
+
+        .main_img_event {
+            border-radius: 20px;
+            height: 200px;
+            width: 225px;
+
+        }
+
+        .div_main_img {
+            width: max-content;
+            height: 200px;
+        }
+
+        #button_save {
+            border: 2px solid #99c3ff;
+            padding: 8px 15px;
+            color: black;
+            background-color: white;
+            border-radius: 50px;
+            text-align: center;
+            text-decoration: none;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 13px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .buttn_center {
+            text-align: center;
+        }
+
+        #button_save:hover {
+            color: white;
+            background-color: #99c3ff;
+        }
+        .text {
+            padding-left: 5px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+
+<section class="header_main">
+    <div class="header_liner">
+        <nav class="nav">
+            <a class="nav_link active" href="home_page.html">Всі заходи</a>
+            <a class="nav_link" href="create_event_page.html">Створити захід</a>
+        </nav>
+        <div class="nav_entrance">
+            <a class="entrance" href="entrance.html">Вхід</a>
+        </div>
+    </div>
+</section>
+
+
+<div id="about_s_d_c">
+    <div class="s_d_c_items">
+        <div class="search_link">
+            <form>
+                <input type="text" name=text" class="search" placeholder="Шукати тут">
+                <input type="submit" name="submit" class="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div class="s_d_c_items">
+        <div class="date_link">
+            <input type="date" id="date_id" name="trip-start" min="2023-01-01" max="2050-12-31"/>
+        </div>
+    </div>
+    <div class="s_d_c_items">
+        <div class="category_link">
+            <select id="category" multiple="multiple">
+                <option value="Music"> Музика</option>
+                <option value="Science"> Наука</option>
+                <option value="Theater_Opera"> Театр/Опера</option>
+                <option value="Beauty_is_healthy"> Краса та здоров'я</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="events_Block" style="display: none;">
+    <div class="div_main_img">
+        <img src="" alt="Зображення події" class="main_img_event">
+    </div>
+   <a href="" style="color: black"><h4> </h4></a>
+    <div class="img_date_EB">
+        <img src="https://img.icons8.com/?size=48&id=85102&format=png" alt="photo" width="25px" height="25px">
+        <div class="text">Дата:</div>
+        <div class="cl_date"></div>
+    </div>
+    <div class="img_time_EB">
+        <img src="https://img.icons8.com/?size=64&id=16153&format=png" alt="photo" width="25px" height="25px">
+        <div class="text">Час:</div>
+        <div class="cl_time"></div>
+    </div>
+    <div class="img_address_EB">
+        <img src="https://cf-00.iconduck.com/assets.00/pin-alt-icon-78x96-eju8w65z.png" width="20px" height="25px">
+        <div class="text">Адреса:</div>
+        <div class="cl_address"></div>
+    </div>
+    <div class="img_price_EB">
+        <img src="https://img.icons8.com/?size=64&id=dtvMlkUgj119&format=png" width="25px" height="25px">
+        <div class="text">Вартість:</div>
+        <div class="cl_price"></div>
+        <div>₴</div>
+    </div>
+    <div class="buttn_center">
+        <a href="" ><button id="button_save">Детальніше...</button></a>
+    </div>
+</div>
+<div id="eventsContainer" class="flex-container">
+    <!-- Здесь будут дублироваться контейнеры для каждого объекта из базы данных -->
+</div>
+
+<script>
+
+
+</script>
+<script>
+    $(document).ready(function () {
+        $('#category').multiselect({
+            buttonWidth: '190px',
+            buttonContainer: '<div class="btn-group" style="border: 3px solid #99c3ff;' +
+                ' border-radius: 10px; z-index: 2; margin-right: 50px; "></div>',
+        });
+
+    });
+</script>
+</body>
+<script src="/ui/js_home_page.js"></script>
+</html>

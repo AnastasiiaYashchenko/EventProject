@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ua">
+<meta charset="utf-8">
+<meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+<head>
+    <title>Реєстрація</title>
+    <style>
+        .form_registration {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            margin: 10% auto;
+            box-shadow: 2px 2px 4px 0 #000000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .registr_link {
+            text-align: left;
+            float: left;
+            border: 3px solid #99c3ff;
+            position: relative;
+            padding: 5px 35px;
+            border-radius: 50px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .registration a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .registr_link:hover {
+            color: #82adce;
+        }
+
+        .entrance_link {
+            position: relative;
+            text-align: right;
+            float: right;
+            border: 3px solid #99c3ff;
+            padding: 5px 45px;
+            border-radius: 50px;
+            margin-top: 10px;
+            z-index: 2;
+            margin-right: 10px;
+        }
+
+        .entrance a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .entrance_link:hover {
+            color: #82adce;
+        }
+        #div_registration input{
+            border: 1px solid #dcdcdc;
+            padding: 12px 10px;
+            width: 240px;
+            border-radius: 5px 5px 0 0;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        #nameUser {
+            border: 1px solid #dcdcdc;
+            padding: 12px 10px;
+            width: 240px;
+            border-radius: 5px 5px 0 0;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        #lastNameUser, #emailUser ,#pass  {
+            border: 1px solid #dcdcdc;
+            padding: 12px 10px;
+            width: 240px;
+            border-radius: 5px 5px 0 0;
+            margin-left: 20px;
+        }
+        #btn_registr{
+            background: white;
+            border-radius: 10px;
+            color: black;
+            border: 3px solid #99c3ff;
+            margin-top: 2.5%;
+            margin-left: 20%;
+            padding: 12px 40px;
+        }
+        #btn_registr:hover {
+            background-color: #99c3ff;
+            color: white;
+        }
+        .registr_link.active{
+            background-color: #99c3ff;
+            color: white;
+        }
+        .registr_link:hover{
+            background-color: #99c3ff;
+            color: white;
+        }
+        .entrance_link:hover{
+            background-color: #99c3ff;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="form_registration">
+    <div class="registration">
+        <a class="registr_link active" href="#">Реєстрація</a>
+        <div class="entrance">
+            <a class="entrance_link" href="entrance.html" type="submit">Вхід</a>
+        </div>
+
+        <div class="div_registration">
+            <input id="nameUser" type="text" placeholder="Введіть ім'я" required>
+            <input id="lastNameUser" type="text" placeholder="Введіть прізвище" required>
+            <input id="emailUser" type="text" placeholder="Введіть email" required>
+            <input id="pass" type="password" placeholder="Введіть пароль" required>
+
+        </div>
+        <button id="btn_registr" type="submit">Зареєструватись</button>
+    </div>
+</div>
+</body>
+<script src="/ui/js_registration.js"></script>
+</html>

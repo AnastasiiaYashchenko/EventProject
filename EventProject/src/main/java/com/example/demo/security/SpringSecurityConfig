@@ -1,0 +1,29 @@
+@Configuration
+@EnableWebSecurity
+public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    private UserService service;
+
+    @Autowired
+    private JwtTokenRepository jwtTokenRepository;
+
+    @Autowired
+    @Qualifier("handlerExceptionResolver")
+    private HandlerExceptionResolver resolver;
+
+    @Bean
+    public PasswordEncoder devPasswordEncoder() {
+        return NoOpPasswordEncoder.getInstance();
+    }
+      @Override
+    protected void configure(HttpSecurity http) throws Exception {
+
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(this.service);
+    }
+
+}

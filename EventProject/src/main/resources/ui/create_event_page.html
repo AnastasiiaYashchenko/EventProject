@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ua">
+<meta name=ФviewportФ content=Фwidth=device-width, initial-scale=1.0?>
+<head>
+
+    <style>
+        .header_main {
+            width: 100%;
+            padding-top: 10px;
+            position: absolute;
+            top: 0;
+            left: 35px;
+            right: 0;
+        }
+
+        .header_liner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .nav_link {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 15px;
+            padding-left: 15px;
+            padding-top: 1px;
+            text-decoration: none;
+            color: black;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 16px;
+            transition: color 0.1s linear;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav_link:hover {
+            color: #99c3ff;
+        }
+
+        .nav_link:hover:after {
+            display: block;
+        }
+
+        .nav_link.active {
+            color: #99c3ff;
+        }
+
+
+        .entrance {
+            text-decoration: none;
+            color: black;
+            padding-top: 5px;
+            margin-right: 80px;
+            z-index: 1;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        .inputsCreateEvent {
+            margin-left: 35px;
+            margin-top: 8%;
+            width: 70%;
+            float: left;
+        }
+
+        .form_group {
+            align-items: center;
+            padding-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .form_group label {
+            width: 150px;
+            text-align: right;
+            margin-right: 20px;
+            margin-left: 10%;
+        }
+
+        .form_group input {
+            border-radius: 20px;
+            border: 2px solid #99c3ff;
+            padding: 5px 55px;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #but_save_CEP {
+            margin-top: 2.5%;
+            margin-left: 26%;
+            border-radius: 20px;
+            border: 3px solid #99c3ff;
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+        }
+
+        #but_save_CEP:hover {
+            color: white;
+            background-color: #99c3ff;
+        }
+
+        #formImageFileCEP {
+            width: 35%;
+            float: right;
+            margin-top: 10%;
+        }
+
+        #imagePreview {
+            width: 250px;
+            height: 65%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .all_object {
+            width: 100%;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+<section class="header_main">
+    <div class="header_liner">
+        <nav class="nav">
+            <a class="nav_link" href="home_page.html">¬с≥ заходи</a>
+            <a class="nav_link active" href="create_event_page.html">—творити зах≥д</a>
+        </nav>
+
+            <a class="entrance" href="entrance.html">¬х≥д</a>
+
+    </div>
+</section>
+<div class="all_object">
+    <div class="inputsCreateEvent">
+        <div class="form_group">
+            <label class="lbl_name" for="name">Ќазва:</label>
+            <input id="name" type="text" placeholder="¬вед≥ть назву заходу" required >
+        </div>
+
+        <div class="form_group">
+            <label class="lbl_day_event">ƒень заходу:</label>
+            <input id="day_event" type="text"  placeholder="рррр-мм-дд" required />
+        </div>
+
+        <div class="form_group">
+            <label class="lbl_time_start">„ас початку:</label>
+            <input id="time_start" type="text" placeholder="година:хвилина:секунда" required>
+        </div>
+
+        <div class="form_group">
+            <label class="lbl_lasting">“ривал≥сть:</label>
+            <input id="lasting" type="text" placeholder="¬вед≥ть тривал≥сть заходу в хвилинах" required>
+        </div>
+
+        <div class="form_group">
+            <label class="lbl_quantity_place"> ≥льк≥сть м≥сць:</label>
+            <input id="quantity_place" type="text" placeholder="¬вед≥ть к≥льк≥сть м≥сць" required>
+        </div>
+
+        <div class="form_group">
+            <label class="lbl_price_event">¬арт≥сть:</label>
+            <input id="price_event" type="text" placeholder="¬вед≥ть варт≥сть" required>
+        </div>
+
+        <div class="form_group">
+            <label class="lbl_age_limit">¬≥кове обмеженн€:</label>
+            <input id="age_limit" type="text" placeholder="¬вед≥ть в≥к" required>
+        </div>
+
+        <div class="form_group">
+            <label class="lbl_address">јдреса:</label>
+            <input id="address" type="text" placeholder="¬вед≥ть адресу" required>
+        </div>
+
+        <div class="form_group">
+            <label class="lbl_event_description">ќпис заходу:</label>
+            <input id="event_description" type="text" placeholder="¬вед≥ть опис" required>
+        </div>
+        <div>
+            <button id="but_save_CEP" type="submit">«берегти</button>
+        </div>
+    </div>
+
+
+    <div id="formImageFileCEP">
+        <img class="preview" id="imagePreview"
+             src="https://thumbs.dreamstime.com/b/l%C3%ADnea-m%C3%A1s-icono-del-bot%C3%B3n-a%C3%B1ada-el-ejemplo-de-la-muestra-aislado-en-blanco-dise%C3%B1o-cruzado-estilo-esquema-dise%C3%B1ado-para-web-y-127719771.jpg"
+             alt="Preview"/>
+
+        <input type="file" id="imageInput" accept="image/*"/>
+
+    </div>
+</div>
+</body>
+<script src="/ui/CEP.js"></script>
+</html>
